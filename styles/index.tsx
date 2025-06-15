@@ -71,7 +71,8 @@ export const button = StyleSheet.create({
 export const container = StyleSheet.create({
   main: {
     maxWidth: 640,
-    marginHorizontal: "auto",
     paddingHorizontal: 32,
+    marginHorizontal: "auto",
+    gap: 24,
   },
 });
