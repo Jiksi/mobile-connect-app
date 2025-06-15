@@ -1,30 +1,29 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Image, Text, View } from "react-native";
+import EventSection from "@/components/event-section";
+import Header from "@/components/header";
+import HeroSection from "@/components/hero-section";
+import { colors } from "@/styles";
+import { ScrollView, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        paddingVertical: 16,
-        paddingHorizontal: 24,
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          gap: 16,
-        }}
-      >
-        <Image source={require("@/assets/images/favicon.png")} />
-        <Text style={{ fontSize: 16, fontWeight: "bold" }}>manus</Text>
-      </View>
-      <View>
-        <Ionicons name="menu" size={24} color="black" />
-      </View>
-    </View>
+    <SafeAreaProvider style={{ backgroundColor: colors.background }}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <ScrollView style={{}}>
+          <View
+            style={{
+              maxWidth: 640,
+              paddingHorizontal: 32,
+              marginHorizontal: "auto",
+              gap: 24,
+            }}
+          >
+            <Header />
+            <HeroSection />
+            <EventSection />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
