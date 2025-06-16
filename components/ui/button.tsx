@@ -1,11 +1,12 @@
 import { button, colors, typography } from "@/styles";
+import { PropsWithChildren } from "react";
 import { Pressable, Text, View } from "react-native";
 
-type Props = {
-  children: React.ReactNode;
+type Props = PropsWithChildren<{
   onPress?: () => void;
   variant?: "primary" | "secondary";
-};
+}>;
+
 export default function Button({
   children,
   onPress,
