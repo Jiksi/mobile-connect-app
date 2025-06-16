@@ -1,11 +1,12 @@
 import Button from "@/components/ui/button";
-import { colors, typography } from "@/styles";
+import { colors, container, typography } from "@/styles";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Link } from "expo-router";
 import { Image, Text, View } from "react-native";
 
 export default function HeroSection() {
   return (
-    <View style={{ paddingVertical: 36, gap: 24 }}>
+    <View style={{ paddingVertical: 24, gap: 24 }}>
       <Text
         style={[
           typography.heading2,
@@ -23,12 +24,7 @@ export default function HeroSection() {
       </Text>
       <View style={{ position: "relative" }}>
         <Image
-          style={{
-            width: "auto",
-            height: "auto",
-            borderRadius: 15,
-            aspectRatio: 16 / 9,
-          }}
+          style={container.image}
           source={require("@/assets/images/home.webp")}
         />
         <FontAwesome
@@ -45,14 +41,9 @@ export default function HeroSection() {
       </View>
       <View style={{ flexDirection: "row", gap: 24, justifyContent: "center" }}>
         <Button variant="primary">Try Manus</Button>
-        <Button
-          variant="secondary"
-          onPress={() => {
-            window.open("https://manus.im", "_blank");
-          }}
-        >
-          Instagram
-        </Button>
+        <Link href="https://www.instagram.com/manus.ai/" asChild>
+          <Button variant="secondary">Instagram</Button>
+        </Link>
       </View>
     </View>
   );
