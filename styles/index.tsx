@@ -75,4 +75,10 @@ export const container = StyleSheet.create({
     marginHorizontal: "auto",
     gap: 24,
   },
+  image: {
+    width: "auto",
+    height: "auto",
+    borderRadius: 15,
+    aspectRatio: 16 / 9,
+  },
 });
