@@ -1,6 +1,7 @@
+import EventCard from "@/components/event-card";
 import { datas } from "@/datas";
 import { colors, typography } from "@/styles";
-import { Image, Text, View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function EventSection() {
   return (
@@ -20,29 +21,8 @@ export default function EventSection() {
         other enthusiasts.
       </Text>
       <View>
-        {datas.map((data, index) => (
-          <View key={index} style={{ paddingBottom: 32 }}>
-            <Image
-              style={{
-                width: "auto",
-                height: "auto",
-                borderRadius: 15,
-                aspectRatio: 16 / 9,
-              }}
-              source={data.imageUrl}
-            />
-            <Text
-              style={[
-                typography.heading3,
-                { color: colors.foreground, paddingVertical: 8 },
-              ]}
-            >
-              {data.title}
-            </Text>
-            <Text style={[typography.body2, { color: colors.muted }]}>
-              {data.date}
-            </Text>
-          </View>
+        {datas.map((data) => (
+          <EventCard key={data.id} data={data} />
         ))}
       </View>
     </>
