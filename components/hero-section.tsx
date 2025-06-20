@@ -41,7 +41,7 @@ export default function HeroSection() {
       </View>
       <View style={{ flexDirection: "row", gap: 24, justifyContent: "center" }}>
         <Button variant="primary">Try Manus</Button>
-        <Link href="https://www.instagram.com/manus.ai/" asChild>
+        <Link href="https://manus.im/" asChild>
           <Button variant="secondary">Instagram</Button>
         </Link>
       </View>
