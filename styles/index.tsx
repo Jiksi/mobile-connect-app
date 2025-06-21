@@ -70,6 +70,7 @@ export const button = StyleSheet.create({
 
 export const container = StyleSheet.create({
   main: {
+    width: "100%",
     maxWidth: 640,
     paddingHorizontal: 32,
     marginHorizontal: "auto",
