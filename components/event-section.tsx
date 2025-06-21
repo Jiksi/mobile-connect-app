@@ -1,7 +1,7 @@
 import EventCard from "@/components/event-card";
 import { datas } from "@/datas";
 import { colors, typography } from "@/styles";
-import { Text, View } from "react-native";
+import { FlatList, Text } from "react-native";
 
 export default function EventSection() {
   return (
@@ -20,11 +20,10 @@ export default function EventSection() {
         Join our community events to learn more about Manus AI and connect with
         other enthusiasts.
       </Text>
-      <View>
-        {datas.map((data) => (
-          <EventCard key={data.id} data={data} />
-        ))}
-      </View>
+      <FlatList
+        data={datas}
+        renderItem={({ item }) => <EventCard data={item} />}
+      />
     </>
   );
 }
