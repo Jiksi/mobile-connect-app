@@ -1,4 +1,6 @@
+import { typography } from "@/styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Link } from "expo-router";
 import { Image, Modal, Pressable, ScrollView, Text, View } from "react-native";
 
 type Props = {
@@ -15,13 +17,10 @@ export default function NavMenu({ isVisible, onClose }: Props) {
             style={{
               height: "100%",
               width: "100%",
-              alignItems: "center",
             }}
           >
             <View
               style={{
-                width: "100%",
-                maxWidth: 640,
                 paddingHorizontal: 32,
               }}
             >
@@ -53,6 +52,22 @@ export default function NavMenu({ isVisible, onClose }: Props) {
                     <Ionicons name="close" size={24} color="black" />
                   </Pressable>
                 </View>
+              </View>
+              <View style={{ gap: 16, paddingVertical: 16 }}>
+                <Link
+                  href="/"
+                  style={[typography.heading3, { textAlign: "center" }]}
+                  onPress={onClose}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/cats"
+                  style={[typography.heading3, { textAlign: "center" }]}
+                  onPress={onClose}
+                >
+                  Cats
+                </Link>
               </View>
             </View>
           </View>
